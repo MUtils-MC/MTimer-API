@@ -45,7 +45,7 @@ publishing {
             pom {
                 name.set("MUtils-Timer-API")
                 description.set("Access the MUtils-Timer through this API")
-                url.set("https://mutils.de")
+                url.set("https://mutils.net")
 
                 developers {
                     developer {
