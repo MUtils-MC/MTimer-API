@@ -5,7 +5,7 @@ import kotlin.time.Duration
 
 abstract class MTimerAPI {
     companion object {
-        var instance: MTimerAPI? = null
+        var INSTANCE: MTimerAPI? = null
     }
 
     /**
@@ -43,6 +43,19 @@ abstract class MTimerAPI {
      * @return False if already stopped
      */
     abstract fun stopTimer(uuid: UUID): Boolean
+
+    /**
+     * Sets a custom time for the global timer
+     * @param duration new time
+     */
+    abstract fun setTime(duration: Duration)
+
+    /**
+     * Sets a custom time for a personal timer
+     * @param uuid Target player [UUID]
+     * @param duration new time
+     */
+    abstract fun setTime(uuid: UUID, duration: Duration): Boolean
 
     /**
      * Add a new logic that is called on each tick (not seconds) as long as the public timer is running
